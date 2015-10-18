@@ -1,0 +1,9 @@
+<div ng-controller="RecipesController">
+	<p>Current Ingredients:</p>
+	<ul ng-repeat="ingredientCurrent in currentIngredients track by $index">
+		<li>{{ ingredientCurrent }}</li>
+	</ul>
+	<p>Type in what you have:</p>
+	<input type='text' ng-model='ingredient.name'>
+	<button ng-click="addIngredient()">Add Ingredient</button>
+</div>
