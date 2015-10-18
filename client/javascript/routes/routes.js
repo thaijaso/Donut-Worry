@@ -7,5 +7,8 @@ myApp.config(function ($routeProvider) {
 		})
 		.when('/searchPage', {
 			templateUrl: './javascript/partials/search.html'
+		})
+		.when('/results', {
+			templateUrl: './javascript/partials/results.html'
 		});
 });

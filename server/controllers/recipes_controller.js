@@ -1049,7 +1049,26 @@ module.exports = (function() {
 		},
 
 		find: function(req, res) {
-			console.log('find');
+			//console.log(req.body.currentIngredients[0]);
+			//var currentIngredients = [];
+			//for (var i = 0; i < req.body[0];)
+			var currentIngredients = req.body.currentIngredients;
+			var validRecipes = [];
+			for (var i = 0; i < data.length; i++) {
+				var counter = 0;
+				var ingredients = data[i].ingredients;
+				for (var j = 0; j < currentIngredients.length; j++) {	
+					if (ingredients.indexOf(currentIngredients[j].name) > -1) {
+						// validRecipes.push(data[i]);
+						counter++;
+					}
+				}
+				if (counter == currentIngredients.length) {
+					validRecipes.push(data[i]);
+				}
+				
+			}
+			res.json({"validRecipes": validRecipes});
 		}
 	}
 })();

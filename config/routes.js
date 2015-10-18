@@ -9,8 +9,7 @@ module.exports = function(app) {
 		recipes.getAll(req, res);
 	});
 
-	app.get('/findRecipes', function(req, res) {
-		//res.render('search');
-		//recipes.find(req, res);
+	app.post('/findRecipes', function(req, res) {
+		recipes.find(req, res);
 	});
 }

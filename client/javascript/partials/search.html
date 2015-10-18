@@ -6,4 +6,9 @@
 	<p>Type in what you have:</p>
 	<input type='text' ng-model='ingredient.name'>
 	<button ng-click="addIngredient()">Add Ingredient</button>
+	<button ng-click="search()">Search Recipes</button>
+	<ul ng-repeat="validRecipe in validRecipes track by $index">
+		<li>{{ validRecipe.name }}</li>
+		<li><img src='{{ validRecipe.image }}'</li>
+	</ul>
 </div>
